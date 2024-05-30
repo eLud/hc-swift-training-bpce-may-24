@@ -12,7 +12,7 @@ struct ApplicationListView: View {
     @Environment(AppData.self) var data: AppData
 
     @State private var selectedApp: Application?
-    private var showAccount = true
+    @State private var showAccount = false
     @State private var showAlert = false
     @State private var showConfirmationDialog = false
     @State private var showHomeMadeModal = false
@@ -35,7 +35,7 @@ struct ApplicationListView: View {
         .sheet(item: $selectedApp) { app in
             AppStoreView(app: app)
         }
-        .sheet(isPresented: .constant(true), content: {
+        .sheet(isPresented: $showAccount, content: {
             Text("Test")
                 .presentationDragIndicator(.visible)
 //                .presentationCornerRadius(50)

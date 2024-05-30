@@ -81,9 +81,30 @@ struct AppStoreView: View {
         .padding(.bottom, 8)
     }
 
+    @GestureState private var appIconRotation = Angle(degrees: 0)
+    @GestureState private var translation = CGSize.zero
+
     private var appIcon: some View {
         AppIconView(iconName: app.appIconName)
             .frame(width: 128, height: 128)
+            .rotationEffect(appIconRotation)
+            .offset(translation)
+            .gesture(iconDragGesture)
+            .simultaneousGesture(iconRotationGesture)
+    }
+
+    private var iconRotationGesture: some Gesture {
+        RotateGesture()
+            .updating($appIconRotation) { value, rotation, transaction in
+                rotation = value.rotation
+            }
+    }
+
+    private var iconDragGesture: some Gesture {
+        DragGesture()
+            .updating($translation) { value, translation, transaction in
+                translation = value.translation
+            }
     }
 
     private var getAppButton: some View {
