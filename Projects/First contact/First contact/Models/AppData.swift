@@ -10,9 +10,9 @@ import Foundation
 @Observable
 class AppData {
 
-    var showDivider: Bool
+    var showGlobalAlert: Bool
     var applications: [Application]
-    
+
     var installedApp: Set<Application>
 
     var todayPath: [Application]
@@ -20,7 +20,7 @@ class AppData {
     init(applications: [Application]) {
         self.applications = applications
         installedApp = []
-        showDivider = true
+        showGlobalAlert = false
         todayPath = []
     }
 

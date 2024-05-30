@@ -47,6 +47,9 @@ struct First_contactApp: App {
                     }
             }
             .environment(data)
+            .sheet(isPresented: $data.showGlobalAlert, content: {
+                Text("Global Alert")
+            })
         }
     }
 }

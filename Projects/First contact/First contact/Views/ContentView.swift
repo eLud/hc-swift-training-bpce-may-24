@@ -29,6 +29,10 @@ extension View {
     func backgroungWithRadius(color: Color, radius: CGFloat) -> some View {
         modifier(BackgroundWithRadius(color: color, radius: radius))
     }
+
+    func smallModal(isPresented: Binding<Bool>, height: Double) -> some View {
+        modifier(SmallModal(isPresented: isPresented, height: height))
+    }
 }
 
 struct BackgroundWithRadius: ViewModifier {
@@ -43,6 +47,27 @@ struct BackgroundWithRadius: ViewModifier {
                 color
             }
             .clipShape(RoundedRectangle(cornerRadius: radius))
+    }
+}
+
+struct SmallModal: ViewModifier {
+
+    @Binding var isPresented: Bool
+    let height: Double
+
+    func body(content: Content) -> some View {
+        ZStack(alignment: .bottom) {
+            content
+                .scaleEffect(isPresented ? 0.95 : 1)
+            if isPresented {
+                Rectangle()
+                    .ignoresSafeArea(edges: .bottom)
+                    .frame(height: height)
+                    .transition(.move(edge: .bottom))
+                    .zIndex(100)
+            }
+        }
+        .animation(.spring, value: isPresented)
     }
 }
 
