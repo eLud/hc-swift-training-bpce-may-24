@@ -12,7 +12,7 @@ struct ApplicationListView: View {
     @Environment(AppData.self) var data: AppData
 
     @State private var selectedApp: Application?
-    @State private var showAccount = false
+    private var showAccount = true
     @State private var showAlert = false
     @State private var showConfirmationDialog = false
     @State private var showHomeMadeModal = false
@@ -35,11 +35,12 @@ struct ApplicationListView: View {
         .sheet(item: $selectedApp) { app in
             AppStoreView(app: app)
         }
-        .sheet(isPresented: $showAccount, content: {
+        .sheet(isPresented: .constant(true), content: {
             Text("Test")
                 .presentationDragIndicator(.visible)
-                .presentationCornerRadius(50)
-                .presentationDetents([.fraction(0.5)])
+//                .presentationCornerRadius(50)
+                .presentationDetents([.large, .fraction(0.5), .height(50)])
+                .presentationBackgroundInteraction(.enabled(upThrough: .height(50)))
         })
         .alert("Alerte importante", isPresented: $showAlert) {
             Button("Delete", role: .destructive) {}
