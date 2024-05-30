@@ -15,6 +15,12 @@
 		331CFF922C07358F00DC7D78 /* AppStoreButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CFF912C07358F00DC7D78 /* AppStoreButtonStyle.swift */; };
 		331CFF942C0739E100DC7D78 /* AppStoreInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CFF932C0739E100DC7D78 /* AppStoreInfoView.swift */; };
 		331CFF962C0770BC00DC7D78 /* ImagedToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CFF952C0770BC00DC7D78 /* ImagedToggle.swift */; };
+		331CFF9B2C0860AB00DC7D78 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CFF9A2C0860AB00DC7D78 /* Application.swift */; };
+		331CFF9D2C0860F500DC7D78 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CFF9C2C0860F500DC7D78 /* AppData.swift */; };
+		331CFF9F2C0863FE00DC7D78 /* ApplicationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CFF9E2C0863FE00DC7D78 /* ApplicationListView.swift */; };
+		331CFFA12C08766D00DC7D78 /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CFFA02C08766D00DC7D78 /* AppIconView.swift */; };
+		331CFFA32C08782300DC7D78 /* AppCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CFFA22C08782300DC7D78 /* AppCellView.swift */; };
+		331CFFA52C087C3A00DC7D78 /* AppInstallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CFFA42C087C3A00DC7D78 /* AppInstallButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		331CFF912C07358F00DC7D78 /* AppStoreButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreButtonStyle.swift; sourceTree = "<group>"; };
 		331CFF932C0739E100DC7D78 /* AppStoreInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreInfoView.swift; sourceTree = "<group>"; };
 		331CFF952C0770BC00DC7D78 /* ImagedToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagedToggle.swift; sourceTree = "<group>"; };
+		331CFF9A2C0860AB00DC7D78 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		331CFF9C2C0860F500DC7D78 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		331CFF9E2C0863FE00DC7D78 /* ApplicationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationListView.swift; sourceTree = "<group>"; };
+		331CFFA02C08766D00DC7D78 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
+		331CFFA22C08782300DC7D78 /* AppCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCellView.swift; sourceTree = "<group>"; };
+		331CFFA42C087C3A00DC7D78 /* AppInstallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInstallButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,11 +73,9 @@
 			isa = PBXGroup;
 			children = (
 				331CFF802C07201E00DC7D78 /* First_contactApp.swift */,
-				331CFF822C07201E00DC7D78 /* ContentView.swift */,
-				331CFF8F2C07300300DC7D78 /* AppStoreView.swift */,
-				331CFF912C07358F00DC7D78 /* AppStoreButtonStyle.swift */,
-				331CFF932C0739E100DC7D78 /* AppStoreInfoView.swift */,
-				331CFF952C0770BC00DC7D78 /* ImagedToggle.swift */,
+				331CFF992C08608900DC7D78 /* Models */,
+				331CFF972C08607400DC7D78 /* Views */,
+				331CFF982C08607A00DC7D78 /* Styles */,
 				331CFF842C07201F00DC7D78 /* Assets.xcassets */,
 				331CFF862C07201F00DC7D78 /* First_contact.entitlements */,
 				331CFF872C07201F00DC7D78 /* Preview Content */,
@@ -79,6 +89,38 @@
 				331CFF882C07201F00DC7D78 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		331CFF972C08607400DC7D78 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				331CFF822C07201E00DC7D78 /* ContentView.swift */,
+				331CFF8F2C07300300DC7D78 /* AppStoreView.swift */,
+				331CFF932C0739E100DC7D78 /* AppStoreInfoView.swift */,
+				331CFF952C0770BC00DC7D78 /* ImagedToggle.swift */,
+				331CFF9E2C0863FE00DC7D78 /* ApplicationListView.swift */,
+				331CFFA02C08766D00DC7D78 /* AppIconView.swift */,
+				331CFFA22C08782300DC7D78 /* AppCellView.swift */,
+				331CFFA42C087C3A00DC7D78 /* AppInstallButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		331CFF982C08607A00DC7D78 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				331CFF912C07358F00DC7D78 /* AppStoreButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		331CFF992C08608900DC7D78 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				331CFF9A2C0860AB00DC7D78 /* Application.swift */,
+				331CFF9C2C0860F500DC7D78 /* AppData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,12 +193,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				331CFF9B2C0860AB00DC7D78 /* Application.swift in Sources */,
+				331CFFA52C087C3A00DC7D78 /* AppInstallButton.swift in Sources */,
 				331CFF962C0770BC00DC7D78 /* ImagedToggle.swift in Sources */,
 				331CFF832C07201E00DC7D78 /* ContentView.swift in Sources */,
+				331CFF9D2C0860F500DC7D78 /* AppData.swift in Sources */,
 				331CFF902C07300300DC7D78 /* AppStoreView.swift in Sources */,
 				331CFF812C07201E00DC7D78 /* First_contactApp.swift in Sources */,
+				331CFF9F2C0863FE00DC7D78 /* ApplicationListView.swift in Sources */,
+				331CFFA32C08782300DC7D78 /* AppCellView.swift in Sources */,
 				331CFF922C07358F00DC7D78 /* AppStoreButtonStyle.swift in Sources */,
 				331CFF942C0739E100DC7D78 /* AppStoreInfoView.swift in Sources */,
+				331CFFA12C08766D00DC7D78 /* AppIconView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

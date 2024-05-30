@@ -9,17 +9,15 @@ import SwiftUI
 
 struct AppStoreView: View {
 
-    let appName: String
-    let editorName: String
+    let app: Application
+    let shouldDivide = true
 
-    @State private var shouldDivide = true
+    @Environment(AppData.self) var data
 
     var body: some View {
         ScrollView {
             VStack {
                 fullHeader
-                Toggle("Should divide", isOn: $shouldDivide)
-                ImagedToggle(isOn: $shouldDivide)
                 dividerIfNeeded
                 scrollingInfoView
                 scrollingImages
@@ -46,7 +44,7 @@ struct AppStoreView: View {
             .foregroundStyle(.green)
             .frame(height: 200)
             .overlay {
-                Text(appName)
+                Text(app.name)
                     .font(.largeTitle)
                     .bold()
             }
@@ -56,20 +54,22 @@ struct AppStoreView: View {
         HStack(spacing: 16) {
             appIcon
             VStack(alignment: .leading) {
-                Text(appName)
+                Text(app.name)
                     .font(.title)
                     .fontWeight(.medium)
-                Text(editorName)
+                Text(app.developerName)
                     .font(.callout)
                     .foregroundStyle(.gray)
                 HStack {
                     getAppButton
-                    Text("Achat intégré")
-                        .font(.caption2)
-                        .foregroundStyle(.gray)
+                    if app.hasInAppPurchase {
+                        Text("Achat intégré")
+                            .font(.caption2)
+                            .foregroundStyle(.gray)
+                    }
                     Spacer()
                     Button(action: {
-                        shouldDivide.toggle()
+                        data.todayPath.append(contentsOf: [Application.demoApps.first!, Application.demoApps.last!])
                     }, label: {
                         Image(systemName: "square.and.arrow.up")
                     })
@@ -82,17 +82,12 @@ struct AppStoreView: View {
     }
 
     private var appIcon: some View {
-        RoundedRectangle(cornerRadius: 20, style: .continuous)
-            .foregroundStyle(.gray)
+        AppIconView(iconName: app.appIconName)
             .frame(width: 128, height: 128)
-            .overlay {
-                Image(systemName: "questionmark.app")
-                    .imageScale(.large)
-            }
     }
 
     private var getAppButton: some View {
-        Button("Obtenir") { }
+        Button("Obtenir") {}
             .buttonStyle(AppStoreButtonStyle())
     }
 
@@ -145,14 +140,17 @@ extension View {
 }
 
 #Preview {
-    AppStoreView(appName: "Duolingo", editorName: "Duolingo")
+    AppStoreView(app: Application.demoApps.first!)
+        .environment(AppData(applications: Application.demoApps))
 }
 
 #Preview {
-    AppStoreView(appName: "Duolingo", editorName: "Duolingo")
+    AppStoreView(app: Application.demoApps.first!)
         .preferredColorScheme(.dark)
+        .environment(AppData(applications: Application.demoApps))
 }
 
 #Preview {
-    AppStoreView(appName: "DuolingoDuolingoDuolingo", editorName: "Duolingo")
+    AppStoreView(app: Application.demoApps.last!)
+        .environment(AppData(applications: Application.demoApps))
 }
