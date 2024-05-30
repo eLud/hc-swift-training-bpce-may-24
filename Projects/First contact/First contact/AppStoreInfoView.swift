@@ -7,25 +7,29 @@
 
 import SwiftUI
 
-struct AppStoreInfoView<M, B>: View where B: View, M: View{
+struct AppStoreInfoView<M, B>: View where B: View, M: View {
 
     let topText: String
-    let middleImageSystemName: ()->(M)
-    let bottomText: ()->(B)
+    let middle: ()->(M)
+    let bottom: ()->(B)
+    let onTapAction: ()->()
 
     var body: some View {
         VStack(spacing: 8) {
             Text(topText.uppercased())
                 .font(.caption2)
                 .bold()
-            middleImageSystemName()
-            bottomText()
+            middle()
+            bottom()
         }
         .foregroundStyle(.gray)
         .frame(width: 70)
+        .onTapGesture {
+            onTapAction()
+        }
     }
 }
 
 #Preview {
-    AppStoreInfoView(topText: "Catégorie", middleImageSystemName: {Image(systemName:"person.crop.square")}, bottomText: {Text("Dev Name")})
+    AppStoreInfoView(topText: "Catégorie", middle: {Image(systemName:"person.crop.square")}, bottom: {Text("Dev Name")}, onTapAction: {  })
 }

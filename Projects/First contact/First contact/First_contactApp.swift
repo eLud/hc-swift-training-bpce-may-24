@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct First_contactApp: App {
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppStoreView(appName: "Duolingo", editorName: "Duolingo")
         }
     }
 }

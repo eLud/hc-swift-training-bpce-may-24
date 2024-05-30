@@ -27,7 +27,17 @@ struct ContentView: View {
 
 extension View {
     func backgroungWithRadius(color: Color, radius: CGFloat) -> some View {
-        self
+        modifier(BackgroundWithRadius(color: color, radius: radius))
+    }
+}
+
+struct BackgroundWithRadius: ViewModifier {
+
+    let color: Color
+    let radius: Double
+
+    func body(content: Content) -> some View {
+        content
             .padding()
             .background {
                 color

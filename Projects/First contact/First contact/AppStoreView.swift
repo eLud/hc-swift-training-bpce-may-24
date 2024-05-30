@@ -12,18 +12,33 @@ struct AppStoreView: View {
     let appName: String
     let editorName: String
 
+    @State private var shouldDivide = true
+
     var body: some View {
         ScrollView {
             VStack {
-                header
-                subHeader
-                Divider()
+                fullHeader
+                Toggle("Should divide", isOn: $shouldDivide)
+                ImagedToggle(isOn: $shouldDivide)
+                dividerIfNeeded
                 scrollingInfoView
                 scrollingImages
-                Spacer()
             }
         }
         .ignoresSafeArea()
+    }
+
+    @ViewBuilder
+    private var fullHeader: some View {
+        header
+        subHeader
+    }
+
+    @ViewBuilder
+    private var dividerIfNeeded: some View {
+        if shouldDivide {
+            Divider()
+        }
     }
 
     private var header: some View {
@@ -53,7 +68,9 @@ struct AppStoreView: View {
                         .font(.caption2)
                         .foregroundStyle(.gray)
                     Spacer()
-                    Button(action: {}, label: {
+                    Button(action: {
+                        shouldDivide.toggle()
+                    }, label: {
                         Image(systemName: "square.and.arrow.up")
                     })
                 }
@@ -75,7 +92,7 @@ struct AppStoreView: View {
     }
 
     private var getAppButton: some View {
-        Button("Obtenir") {}
+        Button("Obtenir") { }
             .buttonStyle(AppStoreButtonStyle())
     }
 
@@ -83,11 +100,13 @@ struct AppStoreView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(0..<5) { i in
-                    AppStoreInfoView(topText: "Test \(i)", middleImageSystemName: {
+                    AppStoreInfoView(topText: "Test \(i)", middle: {
                         Image(systemName:"person.crop.square")
-                    }, bottomText: {
+                    }, bottom: {
                         Text("Dev Name")
                             .font(.caption2)
+                    }, onTapAction: {
+                        print("tapped on \(i)")
                     })
                     Divider()
                 }
@@ -132,4 +151,8 @@ extension View {
 #Preview {
     AppStoreView(appName: "Duolingo", editorName: "Duolingo")
         .preferredColorScheme(.dark)
+}
+
+#Preview {
+    AppStoreView(appName: "DuolingoDuolingoDuolingo", editorName: "Duolingo")
 }

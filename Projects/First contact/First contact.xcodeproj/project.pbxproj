@@ -14,6 +14,7 @@
 		331CFF902C07300300DC7D78 /* AppStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CFF8F2C07300300DC7D78 /* AppStoreView.swift */; };
 		331CFF922C07358F00DC7D78 /* AppStoreButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CFF912C07358F00DC7D78 /* AppStoreButtonStyle.swift */; };
 		331CFF942C0739E100DC7D78 /* AppStoreInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CFF932C0739E100DC7D78 /* AppStoreInfoView.swift */; };
+		331CFF962C0770BC00DC7D78 /* ImagedToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CFF952C0770BC00DC7D78 /* ImagedToggle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		331CFF8F2C07300300DC7D78 /* AppStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreView.swift; sourceTree = "<group>"; };
 		331CFF912C07358F00DC7D78 /* AppStoreButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreButtonStyle.swift; sourceTree = "<group>"; };
 		331CFF932C0739E100DC7D78 /* AppStoreInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreInfoView.swift; sourceTree = "<group>"; };
+		331CFF952C0770BC00DC7D78 /* ImagedToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagedToggle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				331CFF8F2C07300300DC7D78 /* AppStoreView.swift */,
 				331CFF912C07358F00DC7D78 /* AppStoreButtonStyle.swift */,
 				331CFF932C0739E100DC7D78 /* AppStoreInfoView.swift */,
+				331CFF952C0770BC00DC7D78 /* ImagedToggle.swift */,
 				331CFF842C07201F00DC7D78 /* Assets.xcassets */,
 				331CFF862C07201F00DC7D78 /* First_contact.entitlements */,
 				331CFF872C07201F00DC7D78 /* Preview Content */,
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				331CFF962C0770BC00DC7D78 /* ImagedToggle.swift in Sources */,
 				331CFF832C07201E00DC7D78 /* ContentView.swift in Sources */,
 				331CFF902C07300300DC7D78 /* AppStoreView.swift in Sources */,
 				331CFF812C07201E00DC7D78 /* First_contactApp.swift in Sources */,
