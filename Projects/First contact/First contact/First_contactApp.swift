@@ -17,13 +17,23 @@ struct First_contactApp: App {
 
     var body: some Scene {
         WindowGroup {
+            #if os(macOS)
+            macOS
+                .environment(data)
+                .sheet(isPresented: $data.showGlobalAlert, content: {
+                    Text("Global Alert")
+                })
+            #else
             iPhone
-            .environment(data)
-            .sheet(isPresented: $data.showGlobalAlert, content: {
-                Text("Global Alert")
-            })
+                .environment(data)
+                .sheet(isPresented: $data.showGlobalAlert, content: {
+                    Text("Global Alert")
+                })
+            #endif
         }
     }
+
+
 
     private var iPhone: some View {
         TabView {
@@ -59,6 +69,7 @@ struct First_contactApp: App {
 
     private var macOS: some View {
         NavigationSplitView {
+            //Sidebar
             List {
                 NavigationLink {
                     NavigationStack(path: $data.todayPath) {
@@ -88,8 +99,8 @@ struct First_contactApp: App {
             }
             .listStyle(.sidebar)
         } detail: {
+            // Detail
             ContentUnavailableView("Use Sidebar", systemImage: "sidebar.left")
         }
-
     }
 }
