@@ -18,17 +18,24 @@ struct ApplicationListView: View {
     @State private var showHomeMadeModal = false
 
     var body: some View {
+        let _ = Self._printChanges()
         List(data.applications) { app in
-            NavigationLink(value: app) {
+//            NavigationLink(value: app) {
+//                AppCellView(app: app)
+//            }
+            NavigationLink {
+                AppStoreView(app: app)
+            } label: {
                 AppCellView(app: app)
             }
+
         }
         .toolbar {
             ToolbarItem {
                 Button("Account") {
-//                    showAccount.toggle()
+                    showAccount.toggle()
 //                    selectedApp = data.applications.first
-                    showHomeMadeModal.toggle()
+//                    showHomeMadeModal.toggle()
                 }
             }
         }
@@ -51,7 +58,6 @@ struct ApplicationListView: View {
             Button("Cancel", role: .cancel) {}
         }
         .smallModal(isPresented: $showHomeMadeModal, height: 200)
-
     }
 }
 
