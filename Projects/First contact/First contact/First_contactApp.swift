@@ -41,7 +41,7 @@ struct First_contactApp: App {
                     .tabItem {
                         Label("Arcade", systemImage: "arcade.stick.console")
                     }
-                ApplicationListView()
+                WebBrowserView()
                     .tabItem {
                         Label("Recherche", systemImage: "magnifyingglass")
                     }

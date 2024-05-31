@@ -21,6 +21,8 @@
 		331CFFA12C08766D00DC7D78 /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CFFA02C08766D00DC7D78 /* AppIconView.swift */; };
 		331CFFA32C08782300DC7D78 /* AppCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CFFA22C08782300DC7D78 /* AppCellView.swift */; };
 		331CFFA52C087C3A00DC7D78 /* AppInstallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CFFA42C087C3A00DC7D78 /* AppInstallButton.swift */; };
+		335614602C09D8D400468EA1 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356145F2C09D8D400468EA1 /* WebView.swift */; };
+		335614622C09DAC500468EA1 /* WebBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335614612C09DAC500468EA1 /* WebBrowserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		331CFFA02C08766D00DC7D78 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
 		331CFFA22C08782300DC7D78 /* AppCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCellView.swift; sourceTree = "<group>"; };
 		331CFFA42C087C3A00DC7D78 /* AppInstallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInstallButton.swift; sourceTree = "<group>"; };
+		3356145F2C09D8D400468EA1 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		335614612C09DAC500468EA1 /* WebBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebBrowserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				331CFFA02C08766D00DC7D78 /* AppIconView.swift */,
 				331CFFA22C08782300DC7D78 /* AppCellView.swift */,
 				331CFFA42C087C3A00DC7D78 /* AppInstallButton.swift */,
+				335614612C09DAC500468EA1 /* WebBrowserView.swift */,
+				3356145F2C09D8D400468EA1 /* WebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,6 +201,7 @@
 			files = (
 				331CFF9B2C0860AB00DC7D78 /* Application.swift in Sources */,
 				331CFFA52C087C3A00DC7D78 /* AppInstallButton.swift in Sources */,
+				335614602C09D8D400468EA1 /* WebView.swift in Sources */,
 				331CFF962C0770BC00DC7D78 /* ImagedToggle.swift in Sources */,
 				331CFF832C07201E00DC7D78 /* ContentView.swift in Sources */,
 				331CFF9D2C0860F500DC7D78 /* AppData.swift in Sources */,
@@ -204,6 +211,7 @@
 				331CFFA32C08782300DC7D78 /* AppCellView.swift in Sources */,
 				331CFF922C07358F00DC7D78 /* AppStoreButtonStyle.swift in Sources */,
 				331CFF942C0739E100DC7D78 /* AppStoreInfoView.swift in Sources */,
+				335614622C09DAC500468EA1 /* WebBrowserView.swift in Sources */,
 				331CFFA12C08766D00DC7D78 /* AppIconView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
